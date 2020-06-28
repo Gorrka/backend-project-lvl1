@@ -1,11 +1,14 @@
-name: Run ESLint
-
+  
+name: checkLinter
 on: [push]
 
 jobs:
-  eslint:
+  build:
+    name: checklinter
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
-
+      - name: makelint
+        run: |
+          make Install
+          make lint
