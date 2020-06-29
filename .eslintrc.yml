@@ -16,6 +16,6 @@ rules:
   no-console: 0
   import/extensions: 0 
 <<<<<<< HEAD
-  linebreak-style;: 0
+  linebreak-style: 0
 =======
 >>>>>>> a8cd65b3902d14435b4420d57eac7b5578398b3d
