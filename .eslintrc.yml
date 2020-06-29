@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-=======
-# https://eslint.org/docs/user-guide/configuring#specifying-environments
->>>>>>> a8cd65b3902d14435b4420d57eac7b5578398b3d
 env:
   node: true
 
 extends:
   - 'airbnb-base'
-<<<<<<< HEAD
-=======
-
->>>>>>> a8cd65b3902d14435b4420d57eac7b5578398b3d
 
 rules:
   no-console: 0
