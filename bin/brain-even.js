@@ -26,7 +26,7 @@ const oddOrEven = () => {
 
     if (answer !== checkEven) {
       break;
-    } else if (counter === 2) return `Congratulations, ${name}!`;// подгон некрасиво
+    } else if (counter === 2) return console.log(`Congratulations, ${name}!`);// подгон некрасиво
   }
 };
 oddOrEven();
