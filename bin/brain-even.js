@@ -1,4 +1,6 @@
-const readline = require('readline-sync');
+#!/usr/bin/env node
+import readline from 'readline-sync';
+// const readline = require('readline-sync');
 
 const name = readline.question('May I have your name? ');
 console.log(`Hello, ${name}!`);
@@ -18,13 +20,13 @@ const oddOrEven = () => {
 
     const answer = readline.question('Your answer: ');
 
-    const checkAnswer = (answer === checkEven) ? 'Correct!' : '"yes" is wrong answer ;(. Correct answer was "no".\n Lets try again, Bill!';
+    const checkAnswer = (answer === checkEven) ? 'Correct!' : `"yes" is wrong answer ;(. Correct answer was "no".\n Lets try again, ${name}!`;
 
     console.log(checkAnswer);
 
     if (answer !== checkEven) {
       break;
-    } else if (counter === 2) return 'Congratulations, Sam!';// подгон некрасиво
+    } else if (counter === 2) return `Congratulations, ${name}!`;// подгон некрасиво
   }
 };
 oddOrEven();
