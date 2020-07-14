@@ -1,25 +1,50 @@
+#!/usr/bin/env node
+const readline = require('readline-sync');
 
-const maxNumber = 30;
-const maxIter = 3;
+const getRandomNumber = (num) => Math.floor(Math.random() * Math.floor(num));
 
-const getRandomInRangeFirst = Math.floor(Math.random() * Math.floor(maxNumber)); // рандомное число
-const getRandomInRangeSecond = Math.floor(Math.random() * Math.floor(maxNumber));
-// console.log(getRandomInRange);
+const getRandomObjectKey = (object) => { // получаем рандомно по ключу операцию
+  const keys = Object.keys(object); // получаем массив с символами + - *
+  const randomKeyIndex = getRandomNumber(keys.length);// переменная выдает 1.2.3 индекса
+  return keys[randomKeyIndex];
+};
 
-const addition = (`${getRandomInRangeFirst} + ${getRandomInRangeSecond}`); // сложение
+const сalc = () => {
+  // задаем необходимые переменные
+  const name = readline.question('May I have your name? '); // УБРАТЬ ВНУТРЬ ФУНКЦИИ ИЛИ ВЫНЕСТИ В МОДУЛЬ
+  console.log(`Hello, ${name}! \nWhat is the result of the expression?`);
 
-const subtraction = (`${getRandomInRangeFirst} - ${getRandomInRangeSecond}`); // вычитание
+  const maxIter = 3;
+  const maxNumber = 15;
 
-const multiply = (`${getRandomInRangeFirst} * ${getRandomInRangeSecond}`);// умножение
+  for (let counter = 0; counter < maxIter; counter += 1) {
+    const valueFirst = getRandomNumber(maxNumber);
+    const valueSecond = getRandomNumber(maxNumber);
 
-const mathOperation = [
-  addition,
-  subtraction,
-  multiply,
-];
-// ----------------------это охрененно но что это блять такое РАЗОБРАТЬСЯ!!!----------------------------------
-Array.prototype.randomItem = function() {
-  return this[Math.floor(Math.random()*this.length)];
-}
+    const addition = (arr1, arr2) => arr1 + arr2;// УБРАТЬ ОТДЕЛЬНО
+    const subtraction = (arr1, arr2) => arr1 - arr2;
+    const multiply = (arr1, arr2) => arr1 * arr2;
 
-console.log(mathOperation.randomItem());
+    const operations = { // объект в котором храним наши функции
+      '+': addition(valueFirst, valueSecond),
+      '-': subtraction(valueFirst, valueSecond),
+      '*': multiply(valueFirst, valueSecond),
+    };
+
+    const randomOperationSign = getRandomObjectKey(operations);
+    const randomOperationMethod = operations[randomOperationSign];
+    // выводим вопрос и ждем ответ
+    console.log(`Question: ${valueFirst} ${randomOperationSign} ${valueSecond}`);
+    const answer = readline.question('Your answer: ');
+
+    const checkAnswer = (+(answer) === randomOperationMethod) ? 'Correct!' : `${answer} is wrong answer ;(. Correct answer was ${randomOperationMethod}.\n Lets try again, ${name}!`;
+
+    console.log(checkAnswer);
+
+    if (+(answer) !== randomOperationMethod) {
+      break;
+    } else if (counter === 2) return `Congratulations, ${name}!`;// подгон некрасиво
+  }
+  return undefined;
+};
+сalc();
