@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-const readline = require('readline-sync');
+// const readline = require('readline-sync');
+import readline from 'readline-sync';
 
 const getRandomNumber = (num) => Math.floor(Math.random() * Math.floor(num));
 
