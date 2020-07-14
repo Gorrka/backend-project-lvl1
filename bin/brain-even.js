@@ -28,5 +28,6 @@ const oddOrEven = () => {
       break;
     } else if (counter === 2) return console.log(`Congratulations, ${name}!`);// подгон некрасиво
   }
+  return undefined;
 };
 oddOrEven();
