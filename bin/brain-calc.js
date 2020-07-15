@@ -38,14 +38,12 @@ const сalc = () => {
     console.log(`Question: ${valueFirst} ${randomOperationSign} ${valueSecond}`);
     const answer = readline.question('Your answer: ');
 
-    const checkAnswer = (+(answer) === randomOperationMethod) ? 'Correct!' : `${answer} is wrong answer ;(. Correct answer was ${randomOperationMethod}.\n Lets try again, ${name}!`;
-
-    console.log(checkAnswer);
-
     if (+(answer) !== randomOperationMethod) {
-      break;
-    } else if (counter === 2) return `Congratulations, ${name}!`;// подгон некрасиво
+      console.log( `${answer} is wrong answer ;(. Correct answer was ${randomOperationMethod}.\nLets try again, ${name}!`);
+      return;
+    }
+    console.log('Correct!');
   }
-  return undefined;
+  console.log(`Congratulations, ${name}!`);
 };
 сalc();
