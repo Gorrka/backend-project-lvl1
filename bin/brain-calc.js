@@ -39,7 +39,7 @@ const сalc = () => {
     const answer = readline.question('Your answer: ');
 
     if (+(answer) !== randomOperationMethod) {
-      console.log( `${answer} is wrong answer ;(. Correct answer was ${randomOperationMethod}.\nLets try again, ${name}!`);
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${randomOperationMethod}.\n Lets try again, ${name}!`);
       return;
     }
     console.log('Correct!');
