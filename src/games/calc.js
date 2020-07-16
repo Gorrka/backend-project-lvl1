@@ -31,7 +31,7 @@ const engineGame = () => {
     const randomOperationMethod = operations[randomOperationSign];// вызвали по знаку фн
 
     const question = `${valueFirst} ${randomOperationSign} ${valueSecond}`;
-    const rightAnswer = Number(randomOperationMethod);
+    const rightAnswer = randomOperationMethod;
     gameData.push([question, rightAnswer.toString()]);// пушим необходимые переменные
   }
   return gameData;
