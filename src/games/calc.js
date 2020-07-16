@@ -32,7 +32,7 @@ const engineGame = () => {
 
     const question = `${valueFirst} ${randomOperationSign} ${valueSecond}`;
     const rightAnswer = randomOperationMethod;
-    gameData.push([question, rightAnswer]);// пушим необходимые переменные
+    gameData.push([question, rightAnswer.toString()]);// пушим необходимые переменные
   }
   return gameData;
 };
