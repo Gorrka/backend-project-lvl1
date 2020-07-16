@@ -10,8 +10,8 @@ const engineGame = () => {
   // запускаем цикл
   for (let counter = 0; counter < gameLimit; counter += 1) {
     const randomNumber = getRandomNumber(maxNumber);
-    const question = `${getRandomInRange}`;
-    const rightAnswer = (getRandomInRange % 2 === 0) ? 'yes' : 'no';
+    const question = `${getRandomNumber}`;
+    const rightAnswer = (getRandomNumber % 2 === 0) ? 'yes' : 'no';
     gameData.push([question, rightAnswer.toString()]);
   }
   return gameData;
