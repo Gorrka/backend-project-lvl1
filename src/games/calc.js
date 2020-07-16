@@ -6,7 +6,7 @@ const task = 'What is the result of the expression?';
 const getRandomObjectKey = (object) => { // получаем рандомно по ключу операцию
   const keys = Object.keys(object); // получаем массив с символами + - *
   const randomKeyIndex = getRandomNumber(keys.length);// переменная выдает 1.2.3 индекса
-  return keys[randomKeyIndex];
+  return keys[randomKeyIndex];// возвращаем знак из массива
 };
 
 const engineGame = () => {
@@ -27,11 +27,11 @@ const engineGame = () => {
       '*': multiply(valueFirst, valueSecond),
     };
 
-    const randomOperationSign = getRandomObjectKey(operations);
-    const randomOperationMethod = operations[randomOperationSign];
+    const randomOperationSign = getRandomObjectKey(operations);// получили знак
+    const randomOperationMethod = operations[randomOperationSign];// вызвали по знаку фн
 
     const question = `${valueFirst} ${randomOperationSign} ${valueSecond}`;
-    const rightAnswer = randomOperationMethod;
+    const rightAnswer = Number(randomOperationMethod);
     gameData.push([question, rightAnswer.toString()]);// пушим необходимые переменные
   }
   return gameData;
