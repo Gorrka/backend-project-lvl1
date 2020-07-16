@@ -1,4 +1,5 @@
 import { gameBasis, gameLimit } from '../index.js';
+import { getRandomNumber } from '../utility.js';
 
 const task = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
@@ -8,7 +9,7 @@ const engineGame = () => {
   const gameData = [];
   // запускаем цикл
   for (let counter = 0; counter < gameLimit; counter += 1) {
-    const getRandomInRange = Math.floor(Math.random() * Math.floor(maxNumber));
+    const randomNumber = getRandomNumber(maxNumber);
     const question = `${getRandomInRange}`;
     const rightAnswer = (getRandomInRange % 2 === 0) ? 'yes' : 'no';
     gameData.push([question, rightAnswer.toString()]);

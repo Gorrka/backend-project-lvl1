@@ -1,8 +1,7 @@
 import { gameBasis, gameLimit } from '../index.js';
+import { getRandomNumber } from '../utility.js';
 
 const task = 'What is the result of the expression?';
-
-const getRandomNumber = (num) => Math.floor(Math.random() * Math.floor(num));
 
 const getRandomObjectKey = (object) => { // получаем рандомно по ключу операцию
   const keys = Object.keys(object); // получаем массив с символами + - *
