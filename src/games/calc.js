@@ -1,4 +1,4 @@
-import { gameBasis, gameLimit } from '../logic.js';
+import { gameBasis, gameLimit } from '../index.js';
 
 const task = 'What is the result of the expression?';
 
@@ -12,7 +12,7 @@ const getRandomObjectKey = (object) => { // получаем рандомно п
 
 const engineGame = () => {
   const maxNumber = 15; // убрать?
-  const gameData = [];
+  const gameData = [];// создаем массив в котором будем хранить необходимые для логики переменные
 
   for (let counter = 0; counter < gameLimit; counter += 1) {
     const valueFirst = getRandomNumber(maxNumber);
@@ -33,7 +33,7 @@ const engineGame = () => {
 
     const question = `${valueFirst} ${randomOperationSign} ${valueSecond}`;
     const rightAnswer = randomOperationMethod;
-    gameData.push([question, rightAnswer.toString()]);
+    gameData.push([question, rightAnswer.toString()]);// пушим необходимые переменные
   }
   return gameData;
 };

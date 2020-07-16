@@ -9,7 +9,7 @@ const gameBasis = (task, engineGame) => { // engine внутрянка игры
   console.log(`${task}`); // задача, что надо сделать
   for (let i = 0; i < gameLimit; i += 1) {
     const gameData = engineGame();
-    const [question, rightAnswer] = gameData[i];
+    const [question, rightAnswer] = gameData[i];// через дестру вынимаем переменные
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
 
