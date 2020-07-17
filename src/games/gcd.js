@@ -17,7 +17,7 @@ const engineGame = () => {
   for (let counter = 0; counter < gameLimit; counter += 1) {
     const randomNumber1 = getRandomNumber(maxNumber);
     const randomNumber2 = getRandomNumber(maxNumber);
-    const question = `${randomNumber1} ${randomNumber2`;
+    const question = `${randomNumber1} ${randomNumber2}`;
     const rightAnswer = getGcd(randomNumber1, randomNumber2);
     gameData.push([question, rightAnswer.toString()]);
   }
