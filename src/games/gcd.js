@@ -6,7 +6,7 @@ const task = 'Find the greatest common divisor of given numbers.';
 const getGcd = (y, x) => {
   if (y > x) return getGcd(y, x);
   if (!y) return x;
-  return NOD(y, x % y);
+  return getGcd(y, x % y);
 };
 
 const engineGame = () => {
