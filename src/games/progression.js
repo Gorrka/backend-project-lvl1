@@ -13,14 +13,14 @@ const engineGame = () => {
     const firstRandomNumber = getRandomNumber(maxNumber);
     const lastRandomNumber = getRandomNumber(maxNumber);
     const progressionSize = 10;
-    const hiddenNumberOfProgression = randomInRange(0, progressionSize - 1);// ?????
+    const hiddenNumberOfProgression = randomInRange(0, progressionSize - 1);
 
     for (let j = 0; j < progressionSize; j += 1) {
       progression[j] = firstRandomNumber + lastRandomNumber * j;
     }
-    const question = progression.join(' ');
     const rightAnswer = progression[hiddenNumberOfProgression];
     progression[hiddenNumberOfProgression] = '..';
+    const question = progression.join(' ');
     gameData.push([question, rightAnswer.toString()]);
   }
   return gameData;
