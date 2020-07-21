@@ -1,6 +1,5 @@
 # Makefile
 
-
 install: install-deps
 
 brain-calc:
