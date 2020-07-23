@@ -1,4 +1,4 @@
-import { gameBasis, gameLimit } from '../index.js';
+import { gameBasis, gameLimit } from '../engine.js';
 import { getRandomNumber, randomInRange } from '../utility.js';
 
 const task = 'What number is missing in the progression?';

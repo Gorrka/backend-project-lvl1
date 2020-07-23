@@ -1,4 +1,4 @@
-import { gameBasis, gameLimit } from '../index.js';
+import { gameBasis, gameLimit } from '../engine.js';
 import { getRandomNumber } from '../utility.js';
 
 const task = "Answer 'yes' if the number is even, otherwise answer 'no'.";

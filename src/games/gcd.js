@@ -1,4 +1,4 @@
-import { gameBasis, gameLimit } from '../index.js';
+import { gameBasis, gameLimit } from '../engine.js';
 import { getRandomNumber } from '../utility.js';
 
 const task = 'Find the greatest common divisor of given numbers.';
